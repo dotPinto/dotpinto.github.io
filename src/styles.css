@@ -564,13 +564,10 @@ a:focus-visible {
   align-items: flex-start;
 }
 
-.footer-wordmark {
-  font-size: 20px;
-}
-
-.footer-wordmark .brand-mark {
-  width: 29px;
-  height: 29px;
+.footer-wordmark-image {
+  display: block;
+  width: 190px;
+  height: 30px;
 }
 
 .ai-disclosure {
@@ -863,13 +860,9 @@ a:focus-visible {
     padding: 0 7%;
   }
 
-  .footer-wordmark {
-    font-size: 18px;
-  }
-
-  .footer-wordmark .brand-mark {
-    width: 26px;
-    height: 26px;
+  .footer-wordmark-image {
+    width: 168px;
+    height: 27px;
   }
 
   .site-footer {

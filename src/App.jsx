@@ -58,8 +58,6 @@ function App() {
       <header className="site-header">
         <a className="wordmark" href="#home" aria-label={`${profile.name}, home`}>
           <img className="brand-mark" src="/rp-mark.svg" alt="" />
-          {profile.name}
-          <span className="wordmark-dot">.</span>
         </a>
         <nav className="main-nav" aria-label="Navigazione principale">
           <a href="#about">Chi sono</a>
@@ -75,7 +73,7 @@ function App() {
           <div className="hero-content">
             <p className="eyebrow">
               <span className="status-dot" />
-              BENVENUTO NEL MIO PICCOLO SPAZIO
+              benvenuto nel mio blog personale
             </p>
             <h1 id="hero-title">
               Ciao, sono
@@ -175,7 +173,7 @@ function App() {
             <h2>
               Qui trovi qualcosa
               <br />
-              in più su <span>di me.</span>
+              in più su di <span>me.</span>
             </h2>
             <div className="contact-links">
               <a
@@ -223,10 +221,12 @@ function App() {
 
       <footer className="site-footer" ref={footerRef}>
         <div className="footer-brand">
-          <a className="wordmark footer-wordmark" href="#home">
-            <img className="brand-mark" src="/rp-mark.svg" alt="" />
-            {profile.name}
-            <span className="wordmark-dot">.</span>
+          <a className="footer-wordmark" href="#home" aria-label={`${profile.name}, home`}>
+            <img
+              className="footer-wordmark-image"
+              src="/riccardo-pintore.svg"
+              alt=""
+            />
           </a>
         </div>
         <span>FATTO CON CURIOSITÀ, IN ITALIA.</span>
