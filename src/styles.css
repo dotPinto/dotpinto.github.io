@@ -61,10 +61,20 @@ a:focus-visible {
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--display);
   font-size: 25px;
   font-weight: 800;
   letter-spacing: -1.5px;
+}
+
+.brand-mark {
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
 }
 
 .wordmark-dot,
@@ -558,6 +568,11 @@ a:focus-visible {
   font-size: 20px;
 }
 
+.footer-wordmark .brand-mark {
+  width: 29px;
+  height: 29px;
+}
+
 .ai-disclosure {
   color: #85857c;
   font-size: 9px;
@@ -660,6 +675,11 @@ a:focus-visible {
 
   .wordmark {
     font-size: 23px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
   }
 
   .main-nav {
@@ -845,6 +865,11 @@ a:focus-visible {
 
   .footer-wordmark {
     font-size: 18px;
+  }
+
+  .footer-wordmark .brand-mark {
+    width: 26px;
+    height: 26px;
   }
 
   .site-footer {

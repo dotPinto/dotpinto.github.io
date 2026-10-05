@@ -57,6 +57,7 @@ function App() {
     <>
       <header className="site-header">
         <a className="wordmark" href="#home" aria-label={`${profile.name}, home`}>
+          <img className="brand-mark" src="/rp-mark.svg" alt="" />
           {profile.name}
           <span className="wordmark-dot">.</span>
         </a>
@@ -223,6 +224,7 @@ function App() {
       <footer className="site-footer" ref={footerRef}>
         <div className="footer-brand">
           <a className="wordmark footer-wordmark" href="#home">
+            <img className="brand-mark" src="/rp-mark.svg" alt="" />
             {profile.name}
             <span className="wordmark-dot">.</span>
           </a>
