@@ -2,32 +2,53 @@ export const profile = {
   name: "Riccardo Pintore",
   role: "Uno spazio tutto mio",
   intro:
-    "Ciao! Qui raccolgo idee, progetti e cose che imparo lungo la strada. Un piccolo spazio personale, da riempire un pezzo alla volta.",
-  bio: "Mi piace esplorare nuove idee, dare forma ai progetti e condividere quello che scopro. Questa pagina è il mio angolo sul web: una bio più personale arriverà presto.",
+    "Laureato in Computer Science, mi interessano lo sviluppo software e le infrastrutture. Qui condivido esperienze, progetti e nuove cose che imparo lungo la strada.",
+  bio: "Sono laureato in Computer Science e appassionato di tecnologia. Dopo un'esperienza nello sviluppo software, sto ampliando le mie competenze verso cloud e infrastrutture. Mi guidano il lavoro di squadra e l'apprendimento continuo; nel tempo libero amo la bici, il basket, la scienza, la cultura e i videogiochi.",
   location: "Cagliari, Sardegna",
   github: "https://github.com/dotPinto",
   linkedin: "https://www.linkedin.com/in/riccardo-pintore-966366243/",
   articles: [
     {
-      category: "APPUNTI",
-      title: "Una cosa che ho imparato di recente",
+      category: "CERTIFICAZIONI",
+      title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
       excerpt:
-        "Un posto per condividere una scoperta, un'idea o una lezione imparata facendo.",
-      date: "IL TUO PROSSIMO ARTICOLO",
+        "A settembre 2026 ho conseguito la certificazione Azure Fundamentals. Ecco alcuni dei concetti chiave che ho approfondito:",
+      date: "CONSEGUITA · SETTEMBRE 2026",
+      highlights: [
+        "Concetti cloud: IaaS, PaaS e SaaS; cloud pubblico, privato e ibrido.",
+        "Architettura Azure: regioni, zone di disponibilità, risorse e sottoscrizioni.",
+        "Servizi principali: calcolo, rete, archiviazione e database.",
+        "Sicurezza e gestione: Microsoft Entra ID, RBAC, governance e costi.",
+      ],
     },
     {
-      category: "PROGETTI",
-      title: "Dietro le quinte di un progetto",
+      category: "ESPERIENZA UNIVERSITARIA",
+      title: "Sviluppo software per un progetto agro-tecnologico",
       excerpt:
-        "Racconta cosa stai costruendo, le scelte che hai fatto e cosa hai imparato.",
-      date: "UNO SPAZIO DA RIEMPIRE",
+        "Da maggio 2024 a febbraio 2025 ho svolto un apprendistato con l'Università degli Studi di Cagliari, contribuendo a un progetto di ricerca agro-tecnologico con enti pubblici e imprese del territorio.",
+      date: "MAGGIO 2024 — FEBBRAIO 2025",
+      highlights: [
+        "Nel percorso universitario: programmazione, OOP, progettazione software, project management, basi di database e lavoro di squadra.",
+        "Nel progetto: sviluppo frontend con JavaScript e Framework7 per una piattaforma desktop e mobile.",
+        "Collaborazione sul backend: supporto alla progettazione e revisione di API REST con Python e PostgreSQL.",
+        "Altre tecnologie affrontate: HTML, CSS, JSON, Git, GitHub e Node.js.",
+      ],
+      context:
+        "È stata l'occasione per applicare le basi di Computer Science in un progetto concreto e collaborare con un gruppo di lavoro multidisciplinare.",
     },
     {
-      category: "IDEE",
-      title: "Un pensiero da tenere",
+      category: "STAGE · INFRASTRUTTURA",
+      title: "Un nuovo percorso in Avanade",
       excerpt:
-        "Anche una piccola idea merita uno spazio. Questo potrebbe essere il suo.",
-      date: "QUANDO VUOI",
+        "A maggio 2026 ho iniziato uno stage in ambito infrastrutturale presso Avanade. Dopo essermi concentrato sullo sviluppo software, sto ampliando il mio sguardo ai sistemi e alle infrastrutture che permettono alle applicazioni di funzionare.",
+      date: "DA MAGGIO 2026 · AVANADE",
+      highlights: [
+        "Durante lo stage approfondirò Terraform e i principi di Infrastructure as Code.",
+        "Automazioni e scripting per semplificare attività operative.",
+        "Networking e sistemi, per comprendere meglio gli ambienti in cui vengono eseguite le applicazioni.",
+      ],
+      context:
+        "La formazione in Computer Science e l'esperienza con applicazioni, API e database costituiscono una base utile per collegare il punto di vista dello sviluppo a quello dell'infrastruttura.",
     },
   ],
 };

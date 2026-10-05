@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { profile } from "./data/profile.js";
 
 function ArrowIcon({ diagonal = false }) {
@@ -22,7 +23,36 @@ function ArrowIcon({ diagonal = false }) {
   );
 }
 
+function UpArrowIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 16 16"
+      fill="none"
+      className="arrow-icon"
+    >
+      <path d="M8 13.5v-11m-4.5 4.5L8 2.5l4.5 4.5" />
+    </svg>
+  );
+}
+
 function App() {
+  const footerRef = useRef(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const footer = footerRef.current;
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowBackToTop(entry.isIntersecting),
+      { threshold: 0.1 },
+    );
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <header className="site-header">
@@ -32,9 +62,9 @@ function App() {
         </a>
         <nav className="main-nav" aria-label="Navigazione principale">
           <a href="#about">Chi sono</a>
-          <a href="#journal">Appunti</a>
+          <a href="#journal">Articoli</a>
           <a className="nav-contact" href="#contact">
-            Facciamo due chiacchiere <ArrowIcon diagonal />
+            Contatti <ArrowIcon diagonal />
           </a>
         </nav>
       </header>
@@ -55,19 +85,14 @@ function App() {
               </span>
             </h1>
             <p className="hero-intro">{profile.intro}</p>
-            <div className="hero-actions">
-              <a className="button button-dark" href="#about">
-                Piacere di conoscerti <ArrowIcon />
-              </a>
-              <a
-                className="text-link"
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub <ArrowIcon diagonal />
-              </a>
-            </div>
+            <a
+              className="text-link hero-github-link"
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub <ArrowIcon diagonal />
+            </a>
           </div>
           <div className="hero-note" aria-label="Nota personale">
             <span className="note-star" aria-hidden="true">
@@ -120,26 +145,30 @@ function App() {
           <div className="section-wrap">
             <div className="journal-heading">
               <div>
-                <p className="eyebrow">02 — DAL TACCUINO</p>
-                <h2>Appunti sparsi<span>.</span></h2>
+                <p className="eyebrow">02 — APPROFONDIMENTI</p>
+                <h2>Articoli<span>.</span></h2>
               </div>
               <p className="journal-caption">
-                Idee, progetti e piccole cose
+                Traguardi e cose nuove
                 <br />
-                da ricordare.
+                che imparo lungo la strada.
               </p>
             </div>
             <div className="article-list">
-              {profile.articles.map((article, index) => (
+              {profile.articles.map((article) => (
                 <article className="article-card" key={article.title}>
-                  <span className="article-number">
-                    0{index + 1}
-                    <span aria-hidden="true">/</span>
-                  </span>
+                  <span className="article-category">{article.category}</span>
                   <div className="article-main">
-                    <span className="article-category">{article.category}</span>
                     <h3>{article.title}</h3>
                     <p>{article.excerpt}</p>
+                    <ul className="article-highlights">
+                      {article.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                    {article.context && (
+                      <p className="article-context">{article.context}</p>
+                    )}
                   </div>
                   <span className="article-date">{article.date}</span>
                 </article>
@@ -180,18 +209,46 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* Promemoria futuro: prima di aggiungere form, analytics o cookie non essenziali,
+            verificare privacy e consenso; valutare una licenza per il codice se si desidera
+            permetterne il riuso. */}
+        <section
+          className="email-contact section-wrap"
+          id="email-contact"
+          aria-labelledby="email-contact-title"
+          hidden
+        >
+          <p className="eyebrow">CONTATTO DIRETTO</p>
+          <div className="email-contact-card">
+            <h2 id="email-contact-title">Scrivimi</h2>
+            <p>
+              Il contatto email sarà aggiunto qui.
+            </p>
+          </div>
+        </section>
       </main>
 
-      <footer className="site-footer">
-        <a className="wordmark footer-wordmark" href="#home">
-          {profile.name}
-          <span className="wordmark-dot">.</span>
-        </a>
+      <footer className="site-footer" ref={footerRef}>
+        <div className="footer-brand">
+          <a className="wordmark footer-wordmark" href="#home">
+            {profile.name}
+            <span className="wordmark-dot">.</span>
+          </a>
+        </div>
         <span>FATTO CON CURIOSITÀ, IN ITALIA.</span>
-        <a className="back-to-top" href="#home">
-          TORNA SU ↑
-        </a>
+        <small className="ai-disclosure">
+          Sviluppato con il supporto parziale di strumenti di IA.
+        </small>
       </footer>
+      <a
+        className="back-to-top"
+        href="#home"
+        aria-label="Torna all'inizio"
+        hidden={!showBackToTop}
+      >
+        <UpArrowIcon />
+      </a>
     </>
   );
 }
