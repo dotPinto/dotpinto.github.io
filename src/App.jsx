@@ -84,7 +84,11 @@ function App() {
                 ✳
               </span>
             </h1>
-            <p className="hero-intro">{profile.intro}</p>
+            <ul className="hero-titles" aria-label="Profilo professionale">
+              {profile.heroTitles.map((title) => (
+                <li key={title}>{title}</li>
+              ))}
+            </ul>
             <a
               className="text-link hero-github-link"
               href={profile.github}
@@ -93,19 +97,6 @@ function App() {
             >
               GitHub <ArrowIcon diagonal />
             </a>
-          </div>
-          <div className="hero-note" aria-label="Nota personale">
-            <span className="note-star" aria-hidden="true">
-              ✳
-            </span>
-            <p>
-              idee in
-              <br />
-              movimento,
-              <br />
-              sempre.
-            </p>
-            <span className="note-index">NOTE PERSONALI · N. 001</span>
           </div>
           <div className="hero-bottom">
             <span>PERSONE, IDEE & ALTRE COSE BELLE</span>
@@ -181,9 +172,9 @@ function App() {
           <p className="eyebrow">03 — CI SENTIAMO?</p>
           <div className="contact-content">
             <h2>
-              Ogni bella idea
+              Qui trovi qualcosa
               <br />
-              inizia con un <span>ciao.</span>
+              in più su <span>di me.</span>
             </h2>
             <div className="contact-links">
               <a

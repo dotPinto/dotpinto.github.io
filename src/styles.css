@@ -142,13 +142,12 @@ a:focus-visible {
 .hero-content {
   position: relative;
   z-index: 1;
-  width: 72%;
+  width: 100%;
   padding-bottom: 18px;
   animation: fade-up 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 .eyebrow,
-.note-index,
 .hero-bottom,
 .meta-label,
 .article-category,
@@ -199,14 +198,6 @@ a:focus-visible {
   transform: translateY(11px);
 }
 
-.hero-intro {
-  max-width: 455px;
-  margin: 27px 0 0;
-  color: #66675f;
-  font-size: 16px;
-  line-height: 1.75;
-}
-
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -218,47 +209,35 @@ a:focus-visible {
 }
 
 .hero-github-link {
-  margin-top: 32px;
+  margin-top: 28px;
 }
 
 .text-link .arrow-icon {
   width: 13px;
 }
 
-.hero-note {
-  position: absolute;
-  top: 205px;
-  right: 14.5%;
+.hero-titles {
   display: flex;
-  width: 205px;
-  height: 222px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 23px;
-  color: #fff;
-  background: var(--accent);
-  animation:
-    note-enter 800ms 180ms cubic-bezier(0.2, 0.7, 0.2, 1) both,
-    note-float 6s 1s ease-in-out infinite;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 27px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.note-star {
-  font-size: 25px;
-}
-
-.hero-note p {
-  margin: 0;
+.hero-titles li {
+  color: var(--ink);
   font-family: var(--display);
-  font-size: 23px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: -0.8px;
-  line-height: 1.2;
+  letter-spacing: -0.35px;
+  line-height: 1.3;
 }
 
-.note-index {
-  font-size: 8px;
-  letter-spacing: 0.7px;
+.hero-titles li:not(:first-child)::before {
+  margin-right: 9px;
+  color: var(--accent);
+  content: "·";
 }
 
 .hero-bottom {
@@ -630,29 +609,6 @@ a:focus-visible {
   }
 }
 
-@keyframes note-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px) rotate(1deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(4deg);
-  }
-}
-
-@keyframes note-float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(4deg);
-  }
-
-  50% {
-    transform: translateY(-5px) rotate(4deg);
-  }
-}
-
 @keyframes status-pulse {
   0%,
   100% {
@@ -674,12 +630,6 @@ a:focus-visible {
   .hero-bottom {
     right: 6%;
     left: 6%;
-  }
-
-  .hero-note {
-    right: 9%;
-    width: 175px;
-    height: 193px;
   }
 
   .section-wrap {
@@ -761,40 +711,27 @@ a:focus-visible {
     transform: translateY(8px);
   }
 
-  .hero-intro {
-    max-width: 370px;
-    margin-top: 20px;
-    font-size: 14px;
+  .hero-titles {
+    gap: 9px 15px;
+    margin-top: 21px;
   }
 
   .hero-github-link {
-    margin-top: 25px;
+    margin-top: 22px;
+  }
+
+  .hero-titles li {
+    font-size: 13px;
+    letter-spacing: -0.2px;
+  }
+
+  .hero-titles li:not(:first-child)::before {
+    margin-right: 6px;
   }
 
   .text-link {
     gap: 8px;
     font-size: 11px;
-  }
-
-  .hero-note {
-    top: auto;
-    right: 11%;
-    bottom: 83px;
-    width: 140px;
-    height: 152px;
-    padding: 16px;
-  }
-
-  .note-star {
-    font-size: 20px;
-  }
-
-  .hero-note p {
-    font-size: 18px;
-  }
-
-  .note-index {
-    font-size: 6px;
   }
 
   .hero-bottom {

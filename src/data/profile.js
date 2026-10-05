@@ -1,8 +1,11 @@
 export const profile = {
   name: "Riccardo Pintore",
-  role: "Uno spazio tutto mio",
-  intro:
-    "Laureato in Computer Science, mi interessano lo sviluppo software e le infrastrutture. Qui condivido esperienze, progetti e nuove cose che imparo lungo la strada.",
+  heroTitles: [
+    "Computer Science",
+    "Software Developer",
+    "DevOps & IaC",
+    "SysAdmin",
+  ],
   bio: "Sono laureato in Computer Science e appassionato di tecnologia. Dopo un'esperienza nello sviluppo software, sto ampliando le mie competenze verso cloud e infrastrutture. Mi guidano il lavoro di squadra e l'apprendimento continuo; nel tempo libero amo la bici, il basket, la scienza, la cultura e i videogiochi.",
   location: "Cagliari, Sardegna",
   github: "https://github.com/dotPinto",
