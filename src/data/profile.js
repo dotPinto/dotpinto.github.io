@@ -46,9 +46,9 @@ export const profile = {
         "A maggio 2026 ho iniziato uno stage in ambito infrastrutturale presso Avanade. Dopo essermi concentrato sullo sviluppo software, sto ampliando il mio sguardo ai sistemi e alle infrastrutture che permettono alle applicazioni di funzionare.",
       date: "DA MAGGIO 2026 · AVANADE",
       highlights: [
-        "Durante lo stage approfondirò Terraform e i principi di Infrastructure as Code.",
-        "Automazioni e scripting per semplificare attività operative.",
-        "Networking e sistemi, per comprendere meglio gli ambienti in cui vengono eseguite le applicazioni.",
+        "Ho approfondito Terraform e i principi di Infrastructure as Code.",
+        "Ho lavorato su automazioni e scripting per semplificare attività operative.",
+        "Ho approfondito networking e sistemi per comprendere meglio gli ambienti in cui vengono eseguite le applicazioni.",
       ],
       context:
         "La formazione in Computer Science e l'esperienza con applicazioni, API e database costituiscono una base utile per collegare il punto di vista dello sviluppo a quello dell'infrastruttura.",
